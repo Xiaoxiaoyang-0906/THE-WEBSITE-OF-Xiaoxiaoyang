@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Noto Sans TC', sans-serif;
+    background: url('./img/BE1BA879-A4DE-4B6A-A86F-10FD9C7AF94F_1_105_c.jpeg') no-repeat center center/cover; /* 设置全局背景 */
+    background-attachment: fixed; /* 背景固定 */
+    scroll-behavior: smooth;
+}
+
+/* 导航栏样式 */
+.navbar {
+    width: 100%;
+    background-color: rgba(56, 56, 57, 1); /* 完全不透明 */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 15px 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+    
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ffdd57; /* 悬停颜色 */
+}
+
+/* 主要内容样式 */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+/* 标题和段落 */
+.hero-section h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 24px;
+}
+
+/* 大卡片样式 */
+
+.large-card {
+    width: 800px;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0); /* 正確的透明背景設定 */
+    border-radius: 10px;
+    box-shadow: 0 0px 1px rgba(39, 234, 237, 1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    text-decoration: none;
+}
+.large-card:hover{
+    box-shadow: 0 0px 10px rgba(39, 234, 237, 1);
+}
+
+.large-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 卡片区样式 */
+.cards-section {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    gap: 20px; /* 卡片之間的間距 */
+    background-color: rgba(255, 255, 255, 0); /* 透明背景，显示全局背景 */
+    margin-top: 30px; /* 添加上邊距，確保與導航欄有空間 */
+}
+
+
+.card {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(0, 0, 0, 0); /* 可以设置一个稍微透明的白色背景 */
+    border-radius: 10px;
+    box-shadow: 0 0px 1px rgba(39, 234, 237, 1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* 卡片显示时的效果 */
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* 使用Flexbox进行完全居中 */
+.flex-center {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    align-items: center;
+    font-family: "Chocolate Classical Sans", sans-serif;
+    font-weight: 10;
+    font-style: normal;
+    font-size: 30px; /* 字體大小 */
+}
+.text-color {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.text-color:hover{
+    color:rgba(242, 242, 242, 0.679);
+}
+.card:hover{
+    box-shadow: 0 0px 10px rgba(39, 234, 237, 1);
+}
+.h1-text{
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    color:rgb(255, 255, 255);
+}
+.h2-text{
+    color:rgb(255, 255, 255);
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 10;
+}
+.p-text{
+    color:rgba(245, 245, 245, 0.275);
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 1;
+}
+/* 卡片區的佈局 */
+.article-section {
+    display: flex;
+    flex-wrap: wrap; /* 卡片自動換行 */
+    justify-content: center; /* 水平居中 */
+    gap: 20px; /* 卡片之間的間距 */
+    padding: 20px;
+}
+
+/* 卡片樣式 */
+.article {
+    max-width: 1000px; /* 最大寬度 */
+    height: 1000px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 0px 10px rgba(39, 234, 237, 1);
+    padding: 20px;
+    flex-grow: 1; /* 使卡片在內容少的情況下自適應寬度 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 50px;
+}
+/* 標題樣式 */
+.article h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: aqua;
+}
+.article h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: aqua;
+}
+
+.article h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: aqua;
+}
+.article h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: aqua;
+}
+
+/* 段落樣式 */
+.article p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: aliceblue;
+}
+.transparent-cards{
+    height: 170px;
+}
+/* 預設情況下，這段文字是隱藏的 */
+.mobile-only {
+    display: none;
+}
+
+/* 當螢幕寬度小於 768px (常見的手機尺寸) 時顯示該文字 */
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+}
+/* 代码區樣式 */
+pre, code {
+    background-color: #2d2d2d; 
+    color: #f8f8f2; 
+    font-family: 'Courier New', Courier, monospace; 
+
+}
+pre {
+    margin: 20px 0;
+}
+
+code {
+    line-height: 1.4;
+}
